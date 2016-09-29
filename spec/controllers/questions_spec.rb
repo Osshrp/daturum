@@ -9,9 +9,9 @@ describe QuestionsController, type: :request do
     it "has a 200 status code" do
       expect(response.status).to eq(200)
     end
-
+    # byebug
     # it "populates an array of all questions" do
-    #   expect(response.body).to eq(posts)
+    #   expect(response.body).to eq(questions)
     # end
   end
 end
