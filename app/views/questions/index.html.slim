@@ -1,4 +1,6 @@
-- if @questions.empty?
-    | Вопросов пока нет
-    p
-      a href='#' Задать вопрос
+div class='col-xs-3'
+div class='col-xs-6'
+  - if @questions.empty?
+      | Вопросов пока нет
+      p
+        a href='#' Задать вопрос
