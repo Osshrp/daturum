@@ -1,11 +1,4 @@
 div class='col-xs-6'
-  - if @questions.empty?
-      | Вопросов пока нет
-      p
-        = link_to 'Задать вопрос', new_question_path
-  - else
-      - @questions.each do |q|
-        = q.title
-        = q.body
-      p
-        = link_to 'Задать вопрос', new_question_path
+  = render 'questions_list', questions: @questions
+  p
+    = link_to 'Задать вопрос', new_question_path

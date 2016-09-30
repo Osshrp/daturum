@@ -1,0 +1,10 @@
+div
+  - if questions.empty?
+    | Вопросов пока нет
+  - else
+    - questions.each do |q|
+      blockquote
+        p
+          = q.title
+        p 
+          = q.body

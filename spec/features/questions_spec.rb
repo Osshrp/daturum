@@ -6,7 +6,6 @@ feature "Questions" do
   end
 
   scenario "they see no questions" do
-    # visit cards_path
     expect(page).to have_content "Вопросов пока нет"
   end
 
