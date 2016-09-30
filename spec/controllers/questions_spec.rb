@@ -18,7 +18,7 @@ describe QuestionsController, type: :request do
   describe "POST #create" do
       it "saves the new question in the database" do
         post questions_url, params: { question: FactoryGirl.attributes_for(:question) }
-        expect(response.status).to eq(201)
+        expect(response.status).to eq(302)
       end
     end
 end

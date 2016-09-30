@@ -11,7 +11,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new question_params
     if @question.save
-      redirect_to questions_path, status: :created
+      redirect_to questions_path
     else
       get_questions
       render :new
