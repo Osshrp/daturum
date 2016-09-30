@@ -1,0 +1,6 @@
+/ div class='col-xs-6'
+p
+  - if @questions.empty?
+    | Вопросов пока нет
+
+= render 'form', question: @question

@@ -1,0 +1,9 @@
+= simple_form_for question do |f|
+  .form-group
+    = f.input :title, label: "Заголовок вопроса:",
+        input_html: { class: "form-control",
+        required: true, autofocus: true }
+    = f.input :body, label: "Подробное описание ситуации:",
+        input_html: { class: "form-control" }
+  .form-group
+    = f.button :submit, "Задать вопрос", class: 'btn btn-primary'
