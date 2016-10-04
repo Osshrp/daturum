@@ -1,10 +1,18 @@
 require "rails_helper"
+require "spec_helper"
+
 
 describe QuestionsController, type: :request do
 
   describe "GET #index" do
     # let!(:posts) { FactoryGirl.create_list(:post, 2) }
-    before { get questions_url }
+    before do
+      get questions_url
+      @request.env["devise.mapping"] = Devise.mappings[:user]
+      user = FactoryGirl.create(:user)
+      sign_in user
+    end
+
 
     it "has a 200 status code" do
       expect(response.status).to eq(200)
