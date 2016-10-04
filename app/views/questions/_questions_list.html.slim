@@ -6,5 +6,6 @@ div
       blockquote
         p
           = q.title
+          |  - #{q.user.name} <span class="record_time">#{time_ago_in_words(q.created_at)} назад</span>
         p 
           = q.body
