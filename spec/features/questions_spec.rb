@@ -24,23 +24,20 @@ feature "Questions" do
   describe "" do
     before do
       login "test@test.com", "123456", "Sign in"
+      click_link "Задать вопрос"
     end
     scenario "authenticated user whant to ask question" do
-      click_link "Задать вопрос"
-
       expect(page).to have_field "question[title]"
       expect(page).to have_field "question[body]"
     end
 
     scenario "authenticated user leave blank title" do
-      click_link "Задать вопрос"
       fill_in 'question_body', with: "Content"
       click_button "Задать вопрос"
       expect(page).to have_content "Заголовок вопроса:не может быть пустым"
     end
 
     scenario "authenticated user leave blank body" do
-      click_link "Задать вопрос"
       fill_in 'question_title', with: "Content"
       click_button "Задать вопрос"
       expect(page).to have_content "Подробное описание ситуации:не может быть пустым"

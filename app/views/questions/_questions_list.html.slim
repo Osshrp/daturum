@@ -2,10 +2,14 @@ div
   - if questions.empty?
     | Вопросов пока нет
   - else
-    - questions.each do |q|
+    - questions.each do |question|
       blockquote
         p
-          = q.title
-          |  - #{q.user.name} <span class="record_time">#{time_ago_in_words(q.created_at)} назад</span>
+          = question.title
+          |  - #{question.user.name} <span class="record_time">#{time_ago_in_words(question.created_at)} назад</span>
         p 
-          = q.body
+          = question.body
+        - if question.answers.empty?
+          = link_to 'Дать ответ', new_question_answer_path(question.id)
+        - else
+          = link_to 'Дать новый ответ', new_question_answer_path(question.id)
