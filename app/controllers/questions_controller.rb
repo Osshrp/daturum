@@ -28,6 +28,7 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
+    # byebug
     params.require(:question).permit(:title, :body)
   end
 end

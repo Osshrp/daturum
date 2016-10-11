@@ -1,0 +1,7 @@
+= simple_form_for answer, url: question_answer_path do |f|
+  .form-group
+    = f.input :body, label: "Ответ:",
+        input_html: { class: "form-control",
+                      required: true, autofocus: true }
+  .form-group
+    = f.button :submit, "Дать ответ", class: 'btn btn-primary'

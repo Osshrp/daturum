@@ -12,4 +12,8 @@ div
         - if question.answers.empty?
           = link_to 'Дать ответ', new_question_answer_path(question.id)
         - else
+          - question.answers.each do |answer|
+            blockquote
+              p
+                = answer.body
           = link_to 'Дать новый ответ', new_question_answer_path(question.id)
