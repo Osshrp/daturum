@@ -1,4 +1,4 @@
-= simple_form_for answer, url: question_answer_path do |f|
+= simple_form_for [@question, @answer] do |f|
   .form-group
     = f.input :body, label: "Ответ:",
         input_html: { class: "form-control",

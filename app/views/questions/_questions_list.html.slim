@@ -10,7 +10,16 @@ div
         p 
           = question.body
         - if question.answers.empty?
-          = link_to 'Дать ответ', new_question_answer_path(question.id)
+          = link_to 'Дать ответ', new_question_answer_path(question.id),
+            html_options = {id: "#{question.id}"}
+          div id="answer-form-#{question.id}" class="answer-form"
+            = simple_form_for [question, question.answers.build] do |f|
+              .form-group
+                = f.input :body, label: "Ответ:",
+                          input_html: { class: "form-control",
+                          required: true }
+              .form-group
+                = f.button :submit, "Дать ответ", class: 'btn btn-primary'
         - else
           - question.answers.each do |answer|
             blockquote

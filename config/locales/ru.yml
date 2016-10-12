@@ -2,6 +2,11 @@
 ru:
   activerecord:
     errors:
+      models:
+        question:
+          attributes:
+            user:
+              required: 'Пользователь должен существавать'
       messages:
         record_invalid: 'Возникли ошибки: %{errors}'
         restrict_dependent_destroy:
